@@ -12,5 +12,6 @@
     {
         public const string Registrar = nameof(Registrar);
         public const string BuscarPedidos = nameof(BuscarPedidos);
+        public const string BuscarPorCaixaId = nameof(BuscarPorCaixaId);
     }
 }

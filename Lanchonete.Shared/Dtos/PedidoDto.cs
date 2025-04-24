@@ -6,5 +6,6 @@
         public int CaixaId { get; set; }
         public decimal Valor { get; set; }
         public DateTime CadastradoEm { get; set; } = DateTime.Now;
+        public List<ItemPedidoDto> Itens { get; set; } = new();
     }
 }

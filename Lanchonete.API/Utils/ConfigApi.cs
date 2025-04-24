@@ -11,6 +11,7 @@ namespace Lanchonete.API.Utils
         public static IServiceCollection SetupRepositories(this IServiceCollection services)
         {
             services.AddScoped<PedidoRepository>();
+            services.AddScoped<CaixaRepository>();
 
             return services;
         }

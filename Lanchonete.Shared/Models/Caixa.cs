@@ -10,5 +10,6 @@
     public class CaixaApi
     {
         public const string BuscarCaixas = nameof(BuscarCaixas);
+        public const string BuscarPorCaixaId = nameof(BuscarPorCaixaId);
     }
 }

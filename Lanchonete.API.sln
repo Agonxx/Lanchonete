@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lanchonete.API", "Lanchonet
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lanchonete.Shared", "Lanchonete.Shared\Lanchonete.Shared.csproj", "{2FB8BBBF-5CE7-4423-AFD1-DA3588500220}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lanchonete.WEB", "Lanchonete.WEB\Lanchonete.WEB.csproj", "{3C7E9158-4EB6-4A27-8A06-DA4AA6B3C127}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{2FB8BBBF-5CE7-4423-AFD1-DA3588500220}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2FB8BBBF-5CE7-4423-AFD1-DA3588500220}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2FB8BBBF-5CE7-4423-AFD1-DA3588500220}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C7E9158-4EB6-4A27-8A06-DA4AA6B3C127}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C7E9158-4EB6-4A27-8A06-DA4AA6B3C127}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C7E9158-4EB6-4A27-8A06-DA4AA6B3C127}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C7E9158-4EB6-4A27-8A06-DA4AA6B3C127}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

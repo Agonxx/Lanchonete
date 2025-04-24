@@ -25,6 +25,20 @@ namespace Lanchonete.API.Repositories
 
             return listaCaixas;
         }
+        
+        public async Task<List<CaixaDto>> BuscarPorCaixaId(int caixaid)
+        {
+            var listaCaixas = await (from caixas in _db.Caixas
+                                     where caixas.Id == caixaid
+                                     select new CaixaDto
+                                     {
+                                         Id = caixas.Id,
+                                         DataAbertura = caixas.DataAbertura,
+                                         DataEncerramento = caixas.DataEncerramento,
+                                     }).ToListAsync();
+
+            return listaCaixas;
+        }
 
 
     }
