@@ -1,0 +1,25 @@
+using Lanchonete.API.Repositories;
+using Lanchonete.Shared.Models;
+using Microsoft.AspNetCore.Mvc;
+
+namespace Lanchonete.API.Controllers
+{
+    [ApiController]
+    [Route("[controller]")]
+    public class CaixaController : ControllerBase
+    {
+        private readonly CaixaRepository _repo;
+
+        public CaixaController(CaixaRepository repository)
+        {
+            _repo = repository;
+        }
+
+        [HttpGet(CaixaApi.BuscarCaixas)]
+        public async Task<IActionResult> BuscarCaixas()
+        {
+            var obj = await _repo.BuscarCaixas();
+            return Ok(obj);
+        }
+    }
+}
