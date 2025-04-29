@@ -1,0 +1,73 @@
+﻿@using System.Linq
+@typeparam TItem
+
+<table class="minha-tabela">
+	<thead>
+		<tr>
+			@foreach (var header in Headers)
+			{
+				<th>@header</th>
+			}
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in PagedItems)
+		{
+			<tr>
+				@RowTemplate(item)
+			</tr>
+		}
+	</tbody>
+</table>
+
+<div class="paginacao">
+	<button @onclick="PreviousPage" disabled="@IsFirstPage">Anterior</button>
+	Página @CurrentPage de @TotalPages
+	<button @onclick="NextPage" disabled="@IsLastPage">Próxima</button>
+</div>
+
+@code {
+	[Parameter] public IEnumerable<TItem> Items { get; set; }
+	[Parameter] public RenderFragment<TItem> RowTemplate { get; set; }
+	[Parameter] public List<string> Headers { get; set; }
+
+	private int CurrentPage { get; set; } = 1;
+	private int PageSize { get; set; } = 10;
+
+	private IEnumerable<TItem> PagedItems =>
+		Items?.Skip((CurrentPage - 1) * PageSize).Take(PageSize) ?? Enumerable.Empty<TItem>();
+
+	private int TotalPages => (int)Math.Ceiling((Items?.Count() ?? 0) / (double)PageSize);
+	private bool IsFirstPage => CurrentPage == 1;
+	private bool IsLastPage => CurrentPage == TotalPages;
+
+	private void NextPage()
+	{
+		if (!IsLastPage)
+			CurrentPage++;
+	}
+
+	private void PreviousPage()
+	{
+		if (!IsFirstPage)
+			CurrentPage--;
+	}
+}
+
+<style>
+	.minha-tabela {
+		width: 100%;
+		border-collapse: collapse;
+	}
+
+		.minha-tabela th, .minha-tabela td {
+			border: 1px solid #ccc;
+			padding: 8px;
+			text-align: left;
+		}
+
+	.paginacao {
+		margin-top: 10px;
+	}
+
+</style>

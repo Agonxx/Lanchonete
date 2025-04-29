@@ -48,7 +48,7 @@ namespace Lanchonete.API.Repositories
             Pedido novoPedido = new()
             {
                 CaixaId = pedidoObj.CaixaId,
-                Valor = pedidoObj.Valor,
+                Valor = pedidoObj.Itens.Select(w => w.Valor).Sum(),
                 CadastradoEm = DateTime.Now,
             };
 

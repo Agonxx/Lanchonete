@@ -17,6 +17,11 @@ namespace Lanchonete.API.Database.ConfigDB
                 .WithMany()
                 .HasForeignKey(h => h.CategoriaId)
                 .OnDelete(DeleteBehavior.NoAction);
+
+            builder.HasOne<Produto>()
+                .WithMany()
+                .HasForeignKey(h => h.ProdutoId)
+                .OnDelete(DeleteBehavior.NoAction);
         }
     }
 }

@@ -1,10 +1,14 @@
-﻿namespace Lanchonete.WEB.Utils
+﻿using Lanchonete.WEB.Services;
+using Lanchonete.WEB.Services.Interfaces;
+
+namespace Lanchonete.WEB.Utils
 {
     public static class ConfigWeb
     {
         public static IServiceCollection SetupServices(this IServiceCollection services)
         {
-            //services.AddScoped<IUsuarioRestService, UsuarioRestService>();
+            services.AddScoped<IPedidoService, PedidoService>();
+            services.AddScoped<HttpClientService>();
 
             return services;
         }

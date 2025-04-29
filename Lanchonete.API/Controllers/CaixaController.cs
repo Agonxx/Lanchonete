@@ -22,6 +22,13 @@ namespace Lanchonete.API.Controllers
             return Ok(obj);
         }
 
+        [HttpGet(CaixaApi.BuscarCaixaAberto)]
+        public async Task<IActionResult> BuscarCaixaAberto()
+        {
+            var obj = await _repo.BuscarCaixaAberto();
+            return Ok(obj);
+        }
+
         [HttpGet(CaixaApi.BuscarPorCaixaId)]
         public async Task<IActionResult> BuscarPorCaixaId([FromQuery] int caixaId)
         {

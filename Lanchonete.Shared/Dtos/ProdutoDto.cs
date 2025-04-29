@@ -1,14 +1,11 @@
-﻿namespace Lanchonete.Shared.Models
+﻿namespace Lanchonete.Shared.Dtos
 {
-    public class ItemPedido
+    public class ProdutoDto
     {
         public int Id { get; set; }
-        public int PedidoId { get; set; }
         public int CategoriaId { get; set; }
-        public int? ProdutoId { get; set; }
         public string Descricao { get; set; }
         public decimal Valor { get; set; }
         public DateTime CadastradoEm { get; set; } = DateTime.Now;
     }
-
 }

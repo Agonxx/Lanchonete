@@ -12,6 +12,7 @@ namespace Lanchonete.API.Utils
         {
             services.AddScoped<PedidoRepository>();
             services.AddScoped<CaixaRepository>();
+            services.AddScoped<ProdutoRepository>();
 
             return services;
         }
@@ -34,7 +35,7 @@ namespace Lanchonete.API.Utils
             {
                 c.SwaggerDoc("v1", new OpenApiInfo
                 {
-                    Title = "lanchonete API",
+                    Title = "Lanchonete API",
                     Version = "v1",
                     Description = "API para lanchonete"
                 });
